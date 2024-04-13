@@ -46,7 +46,8 @@ const Checkout = () => {
         count,
       })),
     };
-
+    
+    // This calls the backend!
     const response = await fetch("http://localhost:2000/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
