@@ -31,25 +31,6 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         })
       );
 
-      // create a stripe session
-      const session = await stripe.checkout.sessions.create({
-        payment_method_types: ["card"],
-        customer_email: email,
-        mode: "payment",
-        success_url: "http://localhost:2001/checkout/success",
-        cancel_url: "http://localhost:2001",
-        line_items: lineItems,
-      });
-
-      // create the item
-      await strapi
-        .service("api::order.order")
-        .create({ data: { userName, products, stripeSessionId: session.id } });
-
-      // return the session id
-      return { id: session.id };
-    } catch (error) {
-      ctx.response.status = 500;
       return { error: { message: "There was a problem creating the charge" } };
     }
   },
