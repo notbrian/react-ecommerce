@@ -6,6 +6,15 @@ import * as yup from "yup";
 import { shades } from "../../theme";
 import Payment from "./Payment";
 import Shipping from "./Shipping";
+import Shipping from "./Shipping";
+import Shipping from "./Shipping";
+import Shipping from "./Shipping";
+import Shipping from "./Shipping";
+import Shipping from "./Shipping";
+import Shipping from "./Shipping";
+
+// comments
+
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe(
