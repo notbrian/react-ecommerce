@@ -8,13 +8,37 @@ import Payment from "./Payment";
 import Shipping from "./Shipping";
 import { loadStripe } from "@stripe/stripe-js";
 
+// Comments
+// Comments
+// Comments
+// Comments
+// Comments
+// Comments
+// Comments
+// Comments
+
 const stripePromise = loadStripe(
   "pk_test_51LgU7yConHioZHhlAcZdfDAnV9643a7N1CMpxlKtzI1AUWLsRyrord79GYzZQ6m8RzVnVQaHsgbvN1qSpiDegoPi006QkO0Mlc"
-);
+); // Comments
+// Comments
+// Comments
+// Comments
+// Comments
+// Comments
+// Comments
 
 const Checkout = () => {
   const [activeStep, setActiveStep] = useState(0);
   const cart = useSelector((state) => state.cart.cart);
+  // Comments
+  // Comments
+  // Comments
+  // Comments
+  // Comments
+  // Comments
+  // Comments
+  // Comments
+
   const isFirstStep = activeStep === 0;
   const isSecondStep = activeStep === 1;
 
@@ -46,9 +70,9 @@ const Checkout = () => {
         count,
       })),
     };
-    
+
     // This calls the backend!
-    console.log("Creating order")
+    console.log("Creating order");
     const response = await fetch("http://localhost:2000/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
